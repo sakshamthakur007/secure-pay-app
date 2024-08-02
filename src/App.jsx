@@ -120,14 +120,17 @@ function App() {
             required
           />
           <input
-            type="number"
-            name="amount"
-            placeholder="Amount"
-            value={formData.amount}
-            onChange={handleChange}
-            className="block w-full p-4 border border-gray-700 rounded-lg bg-gray-900 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
-            required
-          />
+  type="text"
+  name="amount"
+  placeholder="Amount"
+  value={formData.amount}
+  onChange={handleChange}
+  pattern="^\d+(\.\d{1,2})?$"
+  title="Please enter a valid amount"
+  className="block w-full p-4 border border-gray-700 rounded-lg bg-gray-900 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+  required
+/>
+
           <button type="submit" className="w-full py-3 px-4 bg-blue-500 hover:bg-blue-600 transition duration-300 text-white font-bold rounded-lg flex items-center justify-center space-x-2">
             <i className="fas fa-credit-card"></i>
             <span>Pay Now</span>

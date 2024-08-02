@@ -35,7 +35,7 @@ function App() {
 
   const getSessionId = async () => {
     try {
-      let res = await axios.post("http://localhost:8000/payment", formData);
+      let res = await axios.post("https://secure-pay-api.vercel.app/payment", formData);
       if (res.data && res.data.payment_session_id) {
         setOrderId(res.data.order_id);
         return res.data.payment_session_id;
@@ -47,7 +47,7 @@ function App() {
 
   const verifyPayment = async (orderId) => {
     try {
-      let res = await axios.post("http://localhost:8000/verify", { orderId });
+      let res = await axios.post("https://secure-pay-api.vercel.app/verify", { orderId });
       if (res.data) {
         alert("Payment verified");
       }
